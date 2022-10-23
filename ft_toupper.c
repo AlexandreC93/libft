@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 char	*ft_toupper(char *str)
 {
 	int	i;
@@ -13,9 +11,10 @@ char	*ft_toupper(char *str)
 	}
 	return (str);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	printf("%s",ft_toupper(argv[1]));
 	return (0);
 }
+*/
