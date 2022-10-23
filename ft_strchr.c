@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 char	*ft_strchr(char *str, char c)
 {
 	int	i;
