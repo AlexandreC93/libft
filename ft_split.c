@@ -1,54 +1,75 @@
-int	ft_is_space(char c, char *str)
-{
-	int	i;
+#include <stdlib.h>
 
-	i = 0;
-	while (str[i])
+int		ft_is_space(char to_find, char *str)
+{
+	while (*str)
 	{
-		if (str[i] == c)
+		if (to_find == *str++)
 			return (1);
 	}
 	return (0);
 }
 
-int	ft_wordcount(char *str, char *charset)
+int   ft_wordcount(char *str, char *charset)
 {
 	int	count;
-	int	i;
 
-	i = 0;
 	count = 0;
-	while (str[i])
+	while (*str)
 	{
-		if (ft_is_space(str[i], charset))
+		while (*str && (ft_is_space(*str, charset)))
+			str++;
+		if (*str && !(ft_is_space(*str, charset)))
 		{
 			count++;
-			while (ft_is_space(str[i], charset))
-				i++;
+			while (*str && !(ft_is_space(*str, charset)))
+				str++;
 		}
 	}
 	return (count);
 }
 
-int	ft_wordlen(char *str, char *charset)
+int		ft_wordlen(char *str, char *charset)
 {
-	int	i;
-	int	lenght;
+	int		len;
 
-	i = 0;
-	lenght = 0;
-	while (str[i])
+	len = 0;
+	while (ft_is_space(*str, charset))
+		str++;
+	while (*str && !(ft_is_space(*str, charset)))
 	{
-		if (ft_is_space())
+		str++;
+		len++;
 	}
+	return (len);
 }
 
 char	**ft_split(char *str, char *charset)
 {
-}
+	int	i;
+	int	j;
+	int	words;
+	char	**arr;
 
-int	main(int argc, char **argv)
-{
-	ft_split(argv[1], argv[2]);
-	return (0);
+	i = 0;
+	words = ft_wordcount(str, charset);
+	arr = malloc(sizeof(char *) * words + 1);
+	if (!arr)
+		return ((void *)0);
+	while (i < words)
+	{
+		arr[i] = malloc(sizeof(char) * ft_wordlen(str, charset) + 1);
+		if (!arr[i])
+			return ((void *)0);
+		j = 0;
+		while (ft_is_space(*str, charset))
+			str++;
+		while (*str && (!ft_is_space(*str, charset)))
+			arr[i][j++] = *str++;
+		arr[i][j] = '\0';
+		i++;
+	}
+	arr[i] = ((void *)0);
+	return (arr);
+
 }
