@@ -21,7 +21,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!dest)
 	i = 0;
 	while (s[i])
-		d = (*f)(i++, s[i]);
+		dest = (*f)(i++, s[i]);
 	return (d);
 
 }
