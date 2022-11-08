@@ -1,10 +1,20 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/08 21:26:56 by lcadinot          #+#    #+#             */
+/*   Updated: 2022/11/08 21:44:22 by lcadinot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strndup(char const *src, int n)
 {
-	int	i;
+	int		i;
 	char	*dest;
 
 	i = 0;
@@ -20,7 +30,7 @@ char	*ft_strndup(char const *src, int n)
 	return (dest);
 }
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*dest;
 	unsigned int	i;

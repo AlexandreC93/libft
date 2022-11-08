@@ -1,4 +1,16 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/08 21:21:14 by lcadinot          #+#    #+#             */
+/*   Updated: 2022/11/08 21:39:18 by lcadinot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {
@@ -13,8 +25,8 @@ int	ft_strlen(char *str)
 char	*ft_strdup(char *str)
 {
 	char	*dest;
-	int	lenght;
-	int	i;
+	int		lenght;
+	int		i;
 
 	i = 0;
 	lenght = ft_strlen(str);
