@@ -1,8 +1,20 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/08 21:22:31 by lcadinot          #+#    #+#             */
+/*   Updated: 2022/11/08 21:42:06 by lcadinot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int		ft_strlen(char *s)
+#include "libft.h"
+
+int	ft_strlen(char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
@@ -12,8 +24,8 @@ int		ft_strlen(char *s)
 
 char	*ft_strcat(char *dest, char *src)
 {
-	int i;
-	int x;
+	int	i;
+	int	x;
 
 	i = 0;
 	x = 0;
@@ -43,7 +55,8 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		i++;
 	}
 	length += ((size - 1) * ft_strlen(sep));
-	if ((str = (char *)malloc(sizeof(char) * (length + 1))) == ((void *)0))
+	str = (char *)malloc(sizeof(char) * (length + 1)) == ((void *)0);
+	if (!str)
 		return ((void *)0);
 	i = 0;
 	while (i < size)

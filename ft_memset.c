@@ -1,15 +1,27 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/08 21:18:07 by lcadinot          #+#    #+#             */
+/*   Updated: 2022/11/08 21:37:33 by lcadinot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    *ft_memset(void *s, int c, size_t n)
+#include "libft.h"
+
+void	*ft_memset(void *s, int c, size_t n)
 {
-    char *str;
+	char	*str;
 
-    str = s;
-    while (n > 0)
-    {
-        *str = c;
-        str++;
-        n--;
-    }
-    return (s);
+	str = s;
+	while (n > 0)
+	{
+		*str = c;
+		str++;
+		n--;
+	}
+	return (s);
 }

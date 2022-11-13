@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/08 21:20:25 by lcadinot          #+#    #+#             */
+/*   Updated: 2022/11/08 21:38:39 by lcadinot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-int		ft_is_space(char to_find, char *str)
+int	ft_is_space(char to_find, char *str)
 {
 	while (*str)
 	{
@@ -10,7 +22,7 @@ int		ft_is_space(char to_find, char *str)
 	return (0);
 }
 
-int   ft_wordcount(char *str, char *charset)
+int	ft_wordcount(char *str, char *charset)
 {
 	int	count;
 
@@ -29,7 +41,7 @@ int   ft_wordcount(char *str, char *charset)
 	return (count);
 }
 
-int		ft_wordlen(char *str, char *charset)
+int	ft_wordlen(char *str, char *charset)
 {
 	int		len;
 
@@ -46,9 +58,9 @@ int		ft_wordlen(char *str, char *charset)
 
 char	**ft_split(char *str, char *charset)
 {
-	int	i;
-	int	j;
-	int	words;
+	int		i;
+	int		j;
+	int		words;
 	char	**arr;
 
 	i = 0;
@@ -71,5 +83,4 @@ char	**ft_split(char *str, char *charset)
 	}
 	arr[i] = ((void *)0);
 	return (arr);
-
 }

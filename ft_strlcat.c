@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/08 21:23:24 by lcadinot          #+#    #+#             */
+/*   Updated: 2022/11/08 21:39:51 by lcadinot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 unsigned int	ft_strlcat(char *dst, char *src, unsigned int size)
 {
 	int		i;
@@ -17,5 +31,3 @@ unsigned int	ft_strlcat(char *dst, char *src, unsigned int size)
 		dst[len] = '\0';
 	return (i + ft_strlen(src));
 }
-
-
