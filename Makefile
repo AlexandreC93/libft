@@ -45,9 +45,6 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 OBJ = $(SRC:%.c=%.o)
 BONUS_OBJS = $(BONUS:.c=.o)
-.c.o: $(SRC)
-	$(CC) -o $@ -c $< $(CFLAGS)
-
 all: $(NAME)
 
 $(NAME): $(OBJ)
