@@ -6,22 +6,15 @@
 /*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:27:25 by lcadinot          #+#    #+#             */
-/*   Updated: 2022/11/08 21:27:27 by lcadinot         ###   ########.fr       */
+/*   Updated: 2022/11/11 17:18:20 by lcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_tolower(char *str)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= 65 && str[i] <= 90)
-			str[i] += 32;
-		i++;
-	}
-	return (str);
+	if (c >= 65 && c <= 90)
+		c += 32;
+	return (c);
 }

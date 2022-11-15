@@ -6,7 +6,7 @@
 /*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:18:53 by lcadinot          #+#    #+#             */
-/*   Updated: 2022/11/08 21:18:58 by lcadinot         ###   ########.fr       */
+/*   Updated: 2022/11/11 17:08:01 by lcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	while (*s)
+	{
 		ft_putchar_fd(*s, fd);
+		s++;
+	}
 	ft_putchar_fd('\n', fd);
 }

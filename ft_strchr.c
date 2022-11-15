@@ -6,23 +6,29 @@
 /*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:20:47 by lcadinot          #+#    #+#             */
-/*   Updated: 2022/11/08 21:21:05 by lcadinot         ###   ########.fr       */
+/*   Updated: 2022/11/11 22:51:36 by lcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(char *str, char c)
+char	*ft_strchr(const char *str, int c)
 {
-	int	i;
+	int		i;
 
 	i = 0;
+	if (!(c <= 127 && c >= 0))
+		return ((char *)str);
 	while (str[i])
 	{
 		if (str[i] == c)
-			return (str + i);
+		{
+			return ((char *)str + i);
+		}
 		i++;
 	}
+	if (c == '\0')
+		return ((char *)str + i);
 	return (NULL);
 }
 /*

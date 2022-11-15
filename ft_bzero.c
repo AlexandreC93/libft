@@ -6,13 +6,13 @@
 /*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:45:49 by lcadinot          #+#    #+#             */
-/*   Updated: 2022/11/08 21:45:51 by lcadinot         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:20:39 by lcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	char	*str;
 
@@ -23,5 +23,4 @@ void	*ft_bzero(void *s, size_t n)
 		str++;
 		n--;
 	}
-	return (s);
 }
