@@ -6,7 +6,7 @@
 /*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:26:18 by lcadinot          #+#    #+#             */
-/*   Updated: 2022/11/08 21:50:08 by lcadinot         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:01:29 by lcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,6 @@ static int	ft_char_in_set(char c, char const *set)
 		i++;
 	}
 	return (0);
-}
-
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -58,9 +48,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[i] = 0;
 	return (str);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	printf("%s", ft_strtrim(argv[1], argv[2]));
 	return (0);
 }
+*/

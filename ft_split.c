@@ -6,49 +6,62 @@
 /*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:20:25 by lcadinot          #+#    #+#             */
-/*   Updated: 2022/11/08 21:38:39 by lcadinot         ###   ########.fr       */
+/*   Updated: 2022/11/13 17:12:21 by lcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_is_space(char to_find, char *str)
+static int	ft_is_space(char to_find, char c)
 {
-	while (*str)
-	{
-		if (to_find == *str++)
-			return (1);
-	}
+	if (to_find == c)
+		return (1);
 	return (0);
 }
 
-int	ft_wordcount(char *str, char *charset)
+static char	**free_tab(char **tab)
 {
-	int	count;
+	int		i;
 
-	count = 0;
-	while (*str)
+	i = 0;
+	while (tab[i])
 	{
-		while (*str && (ft_is_space(*str, charset)))
-			str++;
-		if (*str && !(ft_is_space(*str, charset)))
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+	return (NULL);
+}
+
+static int	ft_wordcount(const char *str, char c)
+{
+	int		count;
+	int		i;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		while (str[i] && (ft_is_space(str[i], c)))
+			i++;
+		if (str[i] && !(ft_is_space(str[i], c)))
 		{
 			count++;
-			while (*str && !(ft_is_space(*str, charset)))
-				str++;
+			while (str[i] && !(ft_is_space(str[i], c)))
+				i++;
 		}
 	}
 	return (count);
 }
 
-int	ft_wordlen(char *str, char *charset)
+static int	ft_wordlen(const char *str, char c)
 {
 	int		len;
 
 	len = 0;
-	while (ft_is_space(*str, charset))
+	while (ft_is_space(*str, c))
 		str++;
-	while (*str && !(ft_is_space(*str, charset)))
+	while (*str && !(ft_is_space(*str, c)))
 	{
 		str++;
 		len++;
@@ -56,7 +69,7 @@ int	ft_wordlen(char *str, char *charset)
 	return (len);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(const char *str, char charset)
 {
 	int		i;
 	int		j;
@@ -65,22 +78,27 @@ char	**ft_split(char *str, char *charset)
 
 	i = 0;
 	words = ft_wordcount(str, charset);
-	arr = malloc(sizeof(char *) * words + 1);
+	arr = ft_calloc(words + 1, sizeof(char *));
 	if (!arr)
-		return ((void *)0);
+		return (NULL);
 	while (i < words)
 	{
-		arr[i] = malloc(sizeof(char) * ft_wordlen(str, charset) + 1);
+		arr[i] = ft_calloc(ft_wordlen(str, charset) + 1, sizeof(char));
 		if (!arr[i])
-			return ((void *)0);
+			return (free_tab(arr));
 		j = 0;
 		while (ft_is_space(*str, charset))
 			str++;
 		while (*str && (!ft_is_space(*str, charset)))
 			arr[i][j++] = *str++;
-		arr[i][j] = '\0';
 		i++;
 	}
-	arr[i] = ((void *)0);
 	return (arr);
 }
+/*
+int	main(int argc, char **argv)
+{
+	ft_split(argv[1], 'a');
+	return (0);
+}
+*/

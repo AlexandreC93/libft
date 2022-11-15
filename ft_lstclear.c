@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 21:34:16 by lcadinot          #+#    #+#             */
-/*   Updated: 2022/11/11 17:12:40 by lcadinot         ###   ########.fr       */
+/*   Created: 2022/11/15 12:25:26 by lcadinot          #+#    #+#             */
+/*   Updated: 2022/11/15 13:14:58 by lcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int		i;
-	int		sign;
-	int		num;
+	t_list	*tmp;
 
-	i = 0;
-	sign = 1;
-	num = 0;
-	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\r' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == ' ')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	if (!*lst)
+		return ;
+	while (*lst)
 	{
-		if (str[i] == '-')
-			sign = sign * -1;
-		i++;
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = (num * 10) + str[i] - '0';
-		i++;
-	}
-	return (num * sign);
+	*lst = 0;
 }

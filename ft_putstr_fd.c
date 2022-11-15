@@ -6,9 +6,11 @@
 /*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 21:19:14 by lcadinot          #+#    #+#             */
-/*   Updated: 2022/11/08 21:19:16 by lcadinot         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:22:34 by lcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
