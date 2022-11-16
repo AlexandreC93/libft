@@ -6,13 +6,14 @@
 /*   By: lcadinot <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 12:26:59 by lcadinot          #+#    #+#             */
-/*   Updated: 2022/11/15 12:27:01 by lcadinot         ###   ########.fr       */
+/*   Updated: 2022/11/16 13:04:30 by lcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
